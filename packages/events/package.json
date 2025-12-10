@@ -1,0 +1,49 @@
+{
+  "name": "@tsmolecules/events",
+  "version": "0.1.0",
+  "description": "Event-driven architecture support for TypeScript - DomainEvent",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node && tsc --project tsconfig.build.json",
+    "dev": "tsc --watch --project tsconfig.build.json",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "ddd",
+    "domain-driven-design",
+    "typescript",
+    "domain-event",
+    "event-driven",
+    "xmolecules"
+  ],
+  "author": "Minsu Lee <amondnet@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amondnet/tsMolecules.git",
+    "directory": "packages/events"
+  },
+  "bugs": {
+    "url": "https://github.com/amondnet/tsMolecules/issues"
+  },
+  "homepage": "https://github.com/amondnet/tsMolecules/tree/main/packages/events#readme",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

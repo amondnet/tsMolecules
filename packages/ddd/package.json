@@ -1,0 +1,59 @@
+{
+  "name": "@tsmolecules/ddd",
+  "version": "0.1.0",
+  "description": "DDD building blocks for TypeScript - Entity, ValueObject, Aggregate, Repository",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.js"
+    },
+    "./annotation": {
+      "types": "./dist/annotation/index.d.ts",
+      "import": "./dist/annotation/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node && tsc --project tsconfig.build.json",
+    "dev": "tsc --watch --project tsconfig.build.json",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "ddd",
+    "domain-driven-design",
+    "typescript",
+    "entity",
+    "value-object",
+    "aggregate",
+    "repository",
+    "xmolecules"
+  ],
+  "author": "Minsu Lee <amondnet@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amondnet/tsMolecules.git",
+    "directory": "packages/ddd"
+  },
+  "bugs": {
+    "url": "https://github.com/amondnet/tsMolecules/issues"
+  },
+  "homepage": "https://github.com/amondnet/tsMolecules/tree/main/packages/ddd#readme",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

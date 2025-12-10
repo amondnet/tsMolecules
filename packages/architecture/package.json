@@ -1,0 +1,68 @@
+{
+  "name": "@tsmolecules/architecture",
+  "version": "0.1.0",
+  "description": "Architectural pattern decorators for TypeScript - Layered, Hexagonal, Onion, CQRS",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./layered": {
+      "types": "./dist/layered/index.d.ts",
+      "import": "./dist/layered/index.js"
+    },
+    "./hexagonal": {
+      "types": "./dist/hexagonal/index.d.ts",
+      "import": "./dist/hexagonal/index.js"
+    },
+    "./onion": {
+      "types": "./dist/onion/index.d.ts",
+      "import": "./dist/onion/index.js"
+    },
+    "./cqrs": {
+      "types": "./dist/cqrs/index.d.ts",
+      "import": "./dist/cqrs/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts ./src/layered/index.ts ./src/hexagonal/index.ts ./src/onion/index.ts ./src/cqrs/index.ts --outdir ./dist --target node && tsc --project tsconfig.build.json",
+    "dev": "tsc --watch --project tsconfig.build.json",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "architecture",
+    "typescript",
+    "layered-architecture",
+    "hexagonal-architecture",
+    "onion-architecture",
+    "cqrs",
+    "ports-and-adapters",
+    "clean-architecture",
+    "xmolecules"
+  ],
+  "author": "Minsu Lee <amondnet@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amondnet/tsMolecules.git",
+    "directory": "packages/architecture"
+  },
+  "bugs": {
+    "url": "https://github.com/amondnet/tsMolecules/issues"
+  },
+  "homepage": "https://github.com/amondnet/tsMolecules/tree/main/packages/architecture#readme",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
