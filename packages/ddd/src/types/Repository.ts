@@ -18,4 +18,4 @@ import type { Identifier } from './Identifier.js'
  * @see AggregateRoot
  * @see Identifier
  */
-export interface Repository<T, ID extends Identifier> {}
+export interface Repository<_T, _ID extends Identifier> {}

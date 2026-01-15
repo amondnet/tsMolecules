@@ -1,18 +1,18 @@
 export {
-  Entity,
   AggregateRoot,
-  ValueObject,
+  BoundedContext,
+  Entity,
+  Factory,
+  getDDDMetadata,
+  Module,
   Repository,
   Service,
-  Factory,
-  Module,
-  BoundedContext,
-  getDDDMetadata,
+  ValueObject,
 } from './decorators.js'
 
 export type {
-  DDDStereotype,
-  DDDMetadata,
-  ModuleOptions,
   BoundedContextOptions,
+  DDDMetadata,
+  DDDStereotype,
+  ModuleOptions,
 } from './decorators.js'

@@ -10,11 +10,11 @@
 /**
  * Layered architecture stereotypes.
  */
-export type LayeredStereotype =
-  | 'InterfaceLayer'
-  | 'ApplicationLayer'
-  | 'DomainLayer'
-  | 'InfrastructureLayer'
+export type LayeredStereotype
+  = | 'InterfaceLayer'
+    | 'ApplicationLayer'
+    | 'DomainLayer'
+    | 'InfrastructureLayer'
 
 /**
  * Metadata for layered architecture components.

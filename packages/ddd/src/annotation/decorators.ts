@@ -1,20 +1,20 @@
 /**
  * Decorator metadata key for storing DDD stereotype information.
  */
-const DDD_STEREOTYPE_KEY = Symbol('ddd:stereotype')
+const _DDD_STEREOTYPE_KEY = Symbol('ddd:stereotype')
 
 /**
  * DDD Stereotype types.
  */
-export type DDDStereotype =
-  | 'Entity'
-  | 'AggregateRoot'
-  | 'ValueObject'
-  | 'Repository'
-  | 'Service'
-  | 'Factory'
-  | 'Module'
-  | 'BoundedContext'
+export type DDDStereotype
+  = | 'Entity'
+    | 'AggregateRoot'
+    | 'ValueObject'
+    | 'Repository'
+    | 'Service'
+    | 'Factory'
+    | 'Module'
+    | 'BoundedContext'
 
 /**
  * Metadata stored for each decorated class.
@@ -239,6 +239,8 @@ export interface BoundedContextOptions {
  * class SalesContext {}
  * ```
  */
-export function BoundedContext(options?: BoundedContextOptions): ClassDecorator {
+export function BoundedContext(
+  options?: BoundedContextOptions,
+): ClassDecorator {
   return createStereotypeDecorator('BoundedContext', options)
 }

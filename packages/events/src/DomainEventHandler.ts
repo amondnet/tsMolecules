@@ -23,5 +23,5 @@ export interface DomainEventHandler<T extends DomainEvent> {
    *
    * @param event - the domain event to handle
    */
-  handle(event: T): void | Promise<void>
+  handle: (event: T) => void | Promise<void>
 }

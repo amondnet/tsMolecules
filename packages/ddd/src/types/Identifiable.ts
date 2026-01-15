@@ -7,5 +7,5 @@ export interface Identifiable<ID> {
   /**
    * Returns the identifier of this object.
    */
-  getId(): ID
+  getId: () => ID
 }
