@@ -14,14 +14,17 @@ import type { Identifier } from './Identifier.js'
  * @see AggregateRoot
  * @see Identifier
  */
-export interface Association<T, ID extends Identifier> extends Identifiable<ID> {
+export interface Association<
+  _T,
+  ID extends Identifier,
+> extends Identifiable<ID> {
   /**
    * Returns whether this association points to the same aggregate as the given one.
    *
    * @param other - another association to compare with
    * @returns true if both associations point to the same aggregate
    */
-  pointsToSameAggregateAs(other: Association<unknown, ID>): boolean
+  pointsToSameAggregateAs: (other: Association<unknown, ID>) => boolean
 
   /**
    * Returns whether this association points to the aggregate with the given identifier.
@@ -29,7 +32,7 @@ export interface Association<T, ID extends Identifier> extends Identifiable<ID> 
    * @param identifier - the identifier to check
    * @returns true if this association points to the aggregate with the given identifier
    */
-  pointsTo(identifier: ID): boolean
+  pointsTo: (identifier: ID) => boolean
 }
 
 /**
@@ -38,9 +41,10 @@ export interface Association<T, ID extends Identifier> extends Identifiable<ID> 
  * @typeParam T - the aggregate root type
  * @typeParam ID - the identifier type
  */
-export class SimpleAssociation<T, ID extends Identifier>
-  implements Association<T, ID>
-{
+export class SimpleAssociation<T, ID extends Identifier> implements Association<
+  T,
+  ID
+> {
   private readonly identifier: ID
 
   private constructor(identifier: ID) {

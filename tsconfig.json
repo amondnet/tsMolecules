@@ -2,18 +2,18 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext"],
+    "moduleDetection": "force",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "moduleDetection": "force",
 
     "strict": true,
-    "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
 
+    "noUncheckedIndexedAccess": true,
     "declaration": true,
     "declarationMap": true,
+    "noEmit": true,
     "sourceMap": true,
 
     "esModuleInterop": true,
@@ -21,7 +21,7 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
 
-    "noEmit": true
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "dist"]
 }

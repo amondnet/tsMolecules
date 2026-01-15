@@ -17,4 +17,4 @@ import type { Identifiable } from './Identifiable.js'
  * @see AggregateRoot
  * @see Identifier
  */
-export interface Entity<T, ID> extends Identifiable<ID> {}
+export interface Entity<_T, ID> extends Identifiable<ID> {}

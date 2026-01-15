@@ -13,11 +13,11 @@
 /**
  * Onion architecture stereotypes.
  */
-export type OnionStereotype =
-  | 'DomainModelRing'
-  | 'DomainServiceRing'
-  | 'ApplicationServiceRing'
-  | 'InfrastructureRing'
+export type OnionStereotype
+  = | 'DomainModelRing'
+    | 'DomainServiceRing'
+    | 'ApplicationServiceRing'
+    | 'InfrastructureRing'
 
 /**
  * Metadata for onion architecture components.

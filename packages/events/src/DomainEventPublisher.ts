@@ -25,12 +25,12 @@ export interface DomainEventPublisher {
    *
    * @param event - the domain event to publish
    */
-  publish<T extends DomainEvent>(event: T): void | Promise<void>
+  publish: <T extends DomainEvent>(event: T) => void | Promise<void>
 
   /**
    * Publishes multiple domain events.
    *
    * @param events - the domain events to publish
    */
-  publishAll<T extends DomainEvent>(events: T[]): void | Promise<void>
+  publishAll: <T extends DomainEvent>(events: T[]) => void | Promise<void>
 }

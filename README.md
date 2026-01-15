@@ -47,14 +47,14 @@ Use interfaces and types to enforce DDD relationships at compile time:
 
 ```typescript
 import {
-  Identifier,
-  Identifiable,
-  Entity,
   AggregateRoot,
-  ValueObject,
+  Association,
+  Entity,
+  Identifiable,
+  Identifier,
   Repository,
-  Association
-} from '@tsmolecules/ddd';
+  ValueObject
+} from '@tsmolecules/ddd'
 
 // Define an Identifier
 class AccountId implements Identifier {
@@ -70,9 +70,9 @@ class Money implements ValueObject {
 
   add(other: Money): Money {
     if (this.currency !== other.currency) {
-      throw new Error('Currency mismatch');
+      throw new Error('Currency mismatch')
     }
-    return new Money(this.amount + other.amount, this.currency);
+    return new Money(this.amount + other.amount, this.currency)
   }
 }
 
@@ -84,18 +84,18 @@ class BankAccount implements AggregateRoot<BankAccount, AccountId> {
   ) {}
 
   getId(): AccountId {
-    return this._id;
+    return this._id
   }
 
   deposit(amount: Money): void {
-    this._balance = this._balance.add(amount);
+    this._balance = this._balance.add(amount)
   }
 }
 
 // Define a Repository
 interface BankAccountRepository extends Repository<BankAccount, AccountId> {
-  findById(id: AccountId): Promise<BankAccount | null>;
-  save(account: BankAccount): Promise<void>;
+  findById: (id: AccountId) => Promise<BankAccount | null>
+  save: (account: BankAccount) => Promise<void>
 }
 ```
 
@@ -105,13 +105,13 @@ Use decorators to annotate classes without changing domain names:
 
 ```typescript
 import {
-  Entity,
   AggregateRoot,
-  ValueObject,
+  Entity,
+  Factory,
   Repository,
   Service,
-  Factory
-} from '@tsmolecules/ddd/decorators';
+  ValueObject
+} from '@tsmolecules/ddd/decorators'
 
 @ValueObject()
 class IBAN {
@@ -164,7 +164,7 @@ Interface for types that expose an identifier.
 
 ```typescript
 interface Identifiable<ID> {
-  getId(): ID;
+  getId: () => ID
 }
 ```
 
@@ -209,8 +209,8 @@ Explicit reference to an aggregate root by its identifier (instead of direct ref
 interface Association<T extends AggregateRoot<T, ID>, ID extends Identifier>
   extends Identifiable<ID> {
 
-  pointsToSameAggregateAs(other: Association<any, ID>): boolean;
-  pointsTo(identifier: ID): boolean;
+  pointsToSameAggregateAs: (other: Association<any, ID>) => boolean
+  pointsTo: (identifier: ID) => boolean
 }
 ```
 
@@ -219,7 +219,7 @@ interface Association<T extends AggregateRoot<T, ID>, ID extends Identifier>
 Support for domain events in event-driven architectures:
 
 ```typescript
-import { DomainEvent } from '@tsmolecules/events';
+import { DomainEvent } from '@tsmolecules/events'
 
 class AccountCreated implements DomainEvent {
   constructor(
@@ -243,11 +243,11 @@ class MoneyDeposited implements DomainEvent {
 
 ```typescript
 import {
-  DomainLayer,
   ApplicationLayer,
+  DomainLayer,
   InfrastructureLayer,
   InterfaceLayer
-} from '@tsmolecules/architecture/layered';
+} from '@tsmolecules/architecture/layered'
 
 @DomainLayer()
 class Order { /* ... */ }
@@ -293,11 +293,11 @@ class OrderPostgresRepository { /* ... */ }
 
 ```typescript
 import {
+  ApplicationServiceRing,
   DomainModelRing,
   DomainServiceRing,
-  ApplicationServiceRing,
   InfrastructureRing
-} from '@tsmolecules/architecture/onion';
+} from '@tsmolecules/architecture/onion'
 
 @DomainModelRing()
 class Order { /* ... */ }
@@ -317,10 +317,10 @@ class OrderRepository { /* ... */ }
 ```typescript
 import {
   Command,
-  CommandHandler,
   CommandDispatcher,
+  CommandHandler,
   QueryModel
-} from '@tsmolecules/architecture/cqrs';
+} from '@tsmolecules/architecture/cqrs'
 
 @Command()
 class CreateOrder {

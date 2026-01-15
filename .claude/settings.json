@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:xmolecules.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(bun install:*)",
+      "Bash(bun run lint:*)"
+    ]
+  },
+  "enabledPlugins": {
+    "standards@passionfactory": true,
+    "dev-tools@passionfactory": true,
+    "github@passionfactory": true,
+    "asana@passionfactory": true,
+    "please@passionfactory": true,
+    "context@passionfactory": true,
+    "backend@passionfactory": true,
+    "testing@passionfactory": true,
+    "please-ai@passionfactory": true,
+    "research@passionfactory": true,
+    "reflexion@passionfactory": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "passionfactory": {
+      "source": {
+        "source": "github",
+        "repo": "chatbot-pf/engineering-standards"
+      }
+    }
+  },
+  "language": "english",
+  "env": {
+    "ENABLE_EXPERIMENTAL_MCP_CLI": "true"
+  }
+}

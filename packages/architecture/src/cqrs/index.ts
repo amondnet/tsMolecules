@@ -9,14 +9,14 @@
 /**
  * CQRS stereotypes.
  */
-export type CQRSStereotype =
-  | 'Command'
-  | 'CommandHandler'
-  | 'CommandDispatcher'
-  | 'Query'
-  | 'QueryHandler'
-  | 'QueryDispatcher'
-  | 'QueryModel'
+export type CQRSStereotype
+  = | 'Command'
+    | 'CommandHandler'
+    | 'CommandDispatcher'
+    | 'Query'
+    | 'QueryHandler'
+    | 'QueryDispatcher'
+    | 'QueryModel'
 
 /**
  * Metadata for CQRS components.

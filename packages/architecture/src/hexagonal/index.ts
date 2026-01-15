@@ -10,14 +10,14 @@
 /**
  * Hexagonal architecture stereotypes.
  */
-export type HexagonalStereotype =
-  | 'Application'
-  | 'PrimaryPort'
-  | 'SecondaryPort'
-  | 'PrimaryAdapter'
-  | 'SecondaryAdapter'
-  | 'Port'
-  | 'Adapter'
+export type HexagonalStereotype
+  = | 'Application'
+    | 'PrimaryPort'
+    | 'SecondaryPort'
+    | 'PrimaryAdapter'
+    | 'SecondaryAdapter'
+    | 'Port'
+    | 'Adapter'
 
 /**
  * Metadata for hexagonal architecture components.
